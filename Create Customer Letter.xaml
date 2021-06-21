@@ -4,7 +4,7 @@
     <x:Property Name="rowIndex" Type="InOutArgument(x:Int32)" />
     <x:Property Name="template" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>834,867</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1218,867</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -81,19 +81,19 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[rowIndex]" DataTable="[customersTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="754,702" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[rowIndex]" DataTable="[customersTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="613,702" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
     <ui:ForEachRow.Body>
       <ActivityAction x:TypeArguments="sd:DataRow">
         <ActivityAction.Argument>
           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
         </ActivityAction.Argument>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="720,582" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="579,582" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[&quot;C:\Users\rdotson\Desktop\customer messages\&quot; + rowIndex.ToString + &quot;-&quot; + row(&quot;Last Name&quot;).ToString + &quot;.docx&quot;]" sap:VirtualizedContainerService.HintSize="678,490" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+          <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[&quot;Customer Messages\&quot; + rowIndex.ToString + &quot;-&quot; + row(&quot;Last Name&quot;).ToString + &quot;.docx&quot;]" sap:VirtualizedContainerService.HintSize="537,490" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
             <p:WordApplicationScope.Body>
               <ActivityAction x:TypeArguments="ui:WordDocument">
                 <ActivityAction.Argument>
@@ -110,7 +110,7 @@
                     <ui:SendOutlookMail.Files>
                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                         <InArgument x:TypeArguments="x:String">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\rdotson\Desktop\customer messages\&quot; + rowIndex.ToString + &quot;-&quot; + row(&quot;Last Name&quot;).ToString + &quot;.docx&quot;" />
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Customer Messages\&quot; + rowIndex.ToString + &quot;-&quot; + row(&quot;Last Name&quot;).ToString + &quot;.docx&quot;" />
                         </InArgument>
                       </scg:List>
                     </ui:SendOutlookMail.Files>
